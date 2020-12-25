@@ -1,10 +1,14 @@
-import React, {Fragment} from 'react'
+import React, {Fragment, createContext} from 'react'
 import Product from "../pages/Product/Product"
 import LifeCycleComp from "../pages/LifeCycleComp/LifeCycleComp";
 import BlogPost from "../pages/BlogPost/BlogPost";
 import {BrowserRouter as Router, Route, Link} from 'react-router-dom';
 import YoutubeComp from "../pages/YoutubeComp/YoutubeComp";
 import DetailPost from "../pages/BlogPost/DetailPost/DetailPost";
+import GlobalProvider from "../../context/context";
+
+
+
 
 class Home extends React.Component {
     render() {
@@ -28,4 +32,4 @@ class Home extends React.Component {
     }
 }
 
-export default Home;
+export default GlobalProvider(Home);

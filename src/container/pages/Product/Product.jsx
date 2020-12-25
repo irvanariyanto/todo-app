@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react'
 import CardProduct from "./CardProduct/CardProduct";
-import {connect} from 'react-redux'
+// import {connect} from 'react-redux'
+// import {RootContext} from "../../Home/Home";
+import {GlobalConsumer} from "../../../context/context";
 
 class Product extends React.Component{
     render() {
@@ -8,19 +10,20 @@ class Product extends React.Component{
             <Fragment>
                 <div>
                     <div>
-                        <div>{this.props.order}</div>
+                        <div>{this.props.state.totalOrder}</div>
                     </div>
                 </div>
-              <CardProduct/>
+                <CardProduct/>
             </Fragment>
         );
     }
 }
 
-const mapStateToProps = (state) =>{
-    return {
-        order: state.totalOrder
-    }
-}
+// const mapStateToProps = (state) =>{
+//     return {
+//         order: state.totalOrder
+//     }
+// }
 
-export default connect(mapStateToProps)(Product);
+// export default connect(mapStateToProps)(Product);
+export default GlobalConsumer(Product);
